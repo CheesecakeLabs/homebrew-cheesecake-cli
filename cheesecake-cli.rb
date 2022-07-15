@@ -4,26 +4,16 @@
 class CheesecakeCli < Formula
   desc "CheesecakeLabs CLI"
   homepage "https://github.com/CheesecakeLabs/cheesecake-cli"
-  url "https://github.com/CheesecakeLabs/cheesecake-cli/archive/refs/tags/v0.1.tar.gz"
-  sha256 "83dd4d2c72d10175511df6602727717e54e9f6b0b92e6a0f37cc3a6ac21e2a1b"
+  url "https://github.com/CheesecakeLabs/cheesecake-cli/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "b8c4ca28afe34f1c4db5d33cc9865c84c312c8089e71cfa0217c1303ac9c43dc"
   license "MIT"
 
   # depends_on "cmake" => :build
 
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
-    # Remove unrecognized options if warned by configure
-    # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-
-    bin.install "cheesecake-cli"
     bin.install Dir["src"]
-    bin.install Dir["engineering"]
-    prefix.install "ckl.sh"
-    prefix.install "README.md"
-    prefix.install "LICENSE"
-
-    system "./configure", *std_configure_args, "--disable-silent-rules"
-    # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    bin.install "ckl.sh"
+    bin.install_symlink "bin" => "ckl"
   end
 
   test do
