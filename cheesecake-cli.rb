@@ -2,11 +2,11 @@
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class CheesecakeCli < Formula
-  desc "CLI for new projects"
-  homepage ""
+  desc "CheesecakeLabs CLI"
+  homepage "https://github.com/CheesecakeLabs/cheesecake-cli"
   url "https://github.com/CheesecakeLabs/cheesecake-cli/archive/refs/tags/v0.1.tar.gz"
   sha256 "83dd4d2c72d10175511df6602727717e54e9f6b0b92e6a0f37cc3a6ac21e2a1b"
-  license ""
+  license "MIT"
 
   # depends_on "cmake" => :build
 
